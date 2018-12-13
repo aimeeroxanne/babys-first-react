@@ -13,10 +13,10 @@ class App extends Component {
     }
   }
 
-  inputChange = (text) => {
-    console.log("input changed", text)
+  inputChange = (event) => {
+    console.log("input changed", event.target.value)
     this.setState({
-      newTodo: text
+      newTodo: event.target.value
     })
   }
 
