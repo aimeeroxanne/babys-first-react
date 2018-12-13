@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import ListItem from './components/listitem.js'
+import List from './components/list.js'
 import todos from './data.js'
 
 class App extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      todos: todos
+    }
+  }
+
   render() {
-    console.log(todos)
     return (
-      <ul>
-        {todos.map((item, idx) => {
-          return <ListItem
-            key={idx}
-            todo={item.todo}
-            time={item.time}
-          />}
-        )}
-      </ul>
+      <List todos={this.state.todos}/>
     );
   }
 }
