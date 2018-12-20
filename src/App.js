@@ -5,26 +5,44 @@ import todos from './data.js'
 
 class App extends Component {
 
-  constructor(props) {
-    super(props)
+  constructor() {
+    super() 
     this.state = {
       newTodo: "",
-      todos: todos
+      todos: []
     }
   }
 
   updateTodo = (event) => {
-    console.log("this", this)
+    // console.log("value", event.target.value)
     this.setState({
       newTodo: event.target.value
-    })
+    }) 
+  }
+
+  addTodo = (event) => {
+    event.preventDefault()
+    if(this.state.newTodo.length === 0){
+      alert('NO TODO NO LIST')
+    } 
+    else {
+      let todo = {
+        todo: this.state.newTodo,
+      }
+      this.setState({
+        todos: [...this.state.todos, todo]
+      })
+  }
   }
 
   render() {
     return (
       <div>
-        <AddListItem updateTodo={this.updateTodo}></AddListItem>
-        <List todos={this.state.todos}/>
+        <AddListItem 
+          updateTodo={this.updateTodo}
+          addTodo={this.addTodo}/>
+        <List 
+          todos={this.state.todos}/>
       </div>
     );
   }

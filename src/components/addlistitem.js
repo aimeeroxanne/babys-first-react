@@ -4,10 +4,20 @@ class AddListItem extends Component {
 
   render(){
     return(
-        <div>
-            <input onChange={this.props.updateTodo}></input>
-            <button></button>
+      <form className="needs-validation">
+        <div className="form-group">
+            <input 
+              type="text"
+              className="form-control"
+              onChange={this.props.updateTodo} 
+              required>
+            </input>
         </div>
+        <button 
+          type="submit"
+          className="btn-dark"
+          onClick={this.props.addTodo}>Add Todo</button>
+      </form>
     )
   }
 }
