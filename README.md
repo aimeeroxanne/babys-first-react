@@ -4,6 +4,7 @@
 ###Specs###
 - Use the corresponding Todos API 
   - You can use the deployed version [here.](https://galvanize-todos-api.herokuapp.com/)
+  - Or you can fork and clone and run the API [locally.](https://github.com/aimeeroxanne/project_todosAPI)
 
 ###User Stories###
 - As a user, I want to be able to add tasks to a list so I can keep track of what needs to get done 
