@@ -20,6 +20,16 @@ class App extends Component {
     }) 
   }
 
+  componentDidMount(){
+    fetch('http://localhost:8000/')
+      .then(response => response.json())
+        .then(response => {
+          this.setState({todos: response})
+          console.log(response)
+          return response
+        })
+  }
+
   addTodo = (event) => {
     event.preventDefault()
     if(this.state.newTodo.length === 0){

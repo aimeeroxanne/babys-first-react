@@ -4,7 +4,7 @@ class ListItem extends Component {
 
   render(){
     return(
-      <li>{this.props.todo} {this.props.time}</li>
+      <li>{this.props.priority} {this.props.task} {this.props.due}</li>
     )
   }
 }

@@ -9,8 +9,9 @@ class List extends Component {
         {this.props.todos.map((item, idx) => {
           return <ListItem
             key={idx}
-            todo={item.todo}
-            time={item.time}
+            task={item.task}
+            priority={item.priority}
+            due={item.due}
           />}
         )}
       </ul>
